@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Marcenaria & Design</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">LOGO</div>
+        <nav class="nav-container-sobre">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre_nos.html">Sobre Nós</a></li>
+                <li><a href="portfolio.html" class="active">Portfólio</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+            <a href="https://wa.me/11910538560" class="btn-nav-whatsapp" id="btnNavWhatsapp" target="_blank">WHATSAPP</a>
+        </nav>
+    </header>
+
+    <main class="portfolio-page-container">
+        
+        <section class="portfolio-hero-page">
+            <h1 class="portfolio-title-main">Portfólio</h1>
+        </section>
+
+        <section class="portfolio-gallery-section">
+            <div class="gallery-wrapper">
+                
+                <h2 class="categories-title">Categorias:</h2>
+
+                <div class="filter-buttons-group" id="filterBtnGroup">
+                    <button class="btn-filter active" data-category="todos">TODOS (<span id="count-todos">0</span>)</button>
+                    <button class="btn-filter" data-category="madeira">MADEIRA MACIÇA (<span id="count-madeira">0</span>)</button>
+                    <button class="btn-filter" data-category="mdf">MDF (<span id="count-mdf">0</span>)</button>
+                    <button class="btn-filter" data-category="planejados">PLANEJADOS (<span id="count-planejados">0</span>)</button>
+                    <button class="btn-filter" data-category="mobiliario">MOBILIÁRIO (<span id="count-mobiliario">0</span>)</button>
+                </div>
+
+                <div class="search-container">
+                    <input type="text" placeholder="Procurar por nome..." id="portfolioSearch">
+                </div>
+
+                <div class="gallery-grid" id="galleryGrid"></div>
+
+                <div class="pagination-container" id="paginationContainer"></div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer-container">
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="footer-logo">LOGO</div>
+                <div class="footer-dummy-lines">
+                    <div class="grey-line w-100"></div>
+                    <div class="grey-line w-60"></div>
+                </div>
+            </div>
+            <div class="footer-center">
+                <a href="https://wa.me/11910538560" class="footer-icon" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/paiefilhomarcenaria/" class="footer-icon" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <div class="footer-right">
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre_nos.html">Sobre Nós</a></li>
+                    <li><a href="portfolio.html">Portfólio</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,376 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* ==========================================
+   1. FUNDO DO SITE GERAL (PRIMEIRA SEÇÃO / HERO)
+   ========================================== */
+   body {
+    /* O topo e a primeira seção (Hero) vão herdar essa cor cinza claro */
+    background-color: #dddcdc; 
+    color: #2b2b2b;
+}
+
+/* ==========================================
+   2. SEÇÃO: SOBRE NÓS (COR RIGIDAMENTE BRANCA)
+   ========================================== */
+.about-section {
+    display: flex;
+    gap: 50px;
+    padding: 80px 60px;
+    
+    /* ALTERADO: Muda de cinza para BRANCO Puro */
+    background-color: #ffffff; 
+}
+
+/* ==========================================
+   3. SEÇÃO: PORTFÓLIO (VOLTA PARA O CINZA)
+   ========================================== */
+.portfolio-section {
+    padding: 80px 60px;
+    
+    /* MANTIDO: Volta a ser o cinza claro para quebrar o branco de cima */
+    background-color: #f0f0f2; 
+    
+    /* A mancha decorativa bege continua no canto esquerdo inferior */
+    background-image: radial-gradient(circle at left bottom, #f3e9dc 0%, transparent 35%);
+}
+
+/* NAVBAR: Logo na esquerda, menu na direita */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 60px; /* Margens generosas como na imagem */
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 24px;
+    letter-spacing: -0.5px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.nav-links a.active {
+    font-weight: 700;
+    border-bottom: 2px solid #333;
+    padding-bottom: 4px;
+}
+
+/* HERO CONTAINER: Alinha todo o miolo do site */
+.hero-container {
+    padding: 20px 60px 60px 60px;
+}
+
+/* Título gigante e robusto exatamente como no modelo */
+.main-title {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 50px;
+    letter-spacing: -1px;
+}
+
+/* O segredo do layout: Garante que os dois blocos de baixo fiquem lado a lado */
+.hero-body {
+    display: flex;
+    gap: 60px;
+    align-items: stretch; /* Faz as duas colunas terem a mesma altura */
+}
+
+/* COLUNA DA ESQUERDA: Moldura da imagem */
+.image-box {
+    flex: 1.1; /* Ligeiramente mais larga que a coluna de texto */
+    border: 2px solid #2c2c2c;
+    position: relative;
+    min-height: 560px; /* Garante uma boa altura para o retângulo */
+    min-width: 300px; /* Garante uma boa largura para o retângulo */
+    background-color: #e6e6e9;
+}
+
+/* Criando o "X" perfeito dentro do retângulo técnico */
+.line-diagonal-1, .line-diagonal-2 {
+    position: absolute;
+    width: 125%;
+    height: 1.5px;
+    background-color: #2c2c2c;
+    top: 50%;
+    left: -12.5%;
+}
+.line-diagonal-1 { transform: rotate(28deg); }
+.line-diagonal-2 { transform: rotate(-28deg); }
+
+/* COLUNA DA DIREITA: Caixa de conteúdo vertical */
+.content-box {
+    flex: 0.9;
+    display: flex;
+    flex-direction: column; /* Alinha os blocos de cima para baixo */
+}
+
+/* Subtítulo com linha inferior que não ocupa a tela toda */
+.subtitle-wrapper {
+    border-bottom: 1px solid #2c2c2c;
+    display: inline-block;
+    align-self: flex-start; /* Respeita o tamanho do texto */
+    padding-bottom: 8px;
+    margin-bottom: 25px;
+}
+
+.subtitle {
+    font-size: 20px;
+    font-weight: 400;
+    color: #2c2c2c;
+}
+
+/* Linhas cinzas simulando o texto */
+.text-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.grey-line {
+    height: 14px;
+    background-color: #b8b8bc;
+}
+/* Larguras exatas das linhas do seu desenho */
+.w-100 { width: 95%; }
+.w-90  { width: 90%; }
+.w-95  { width: 93%; }
+.w-80  { width: 100%; }
+
+/* BARRA DE AÇÕES: Fixada estritamente no final da coluna */
+.actions-bar {
+    margin-top: auto; /* Truque do Flexbox: Empurra este bloco todo para o rodapé da coluna */
+    display: flex;
+    justify-content: space-between; /* Botões na esquerda, redes na direita */
+    align-items: center;
+    padding-top: 40px; /* Espaço de segurança caso o texto cresça */
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Botão ocre/marrom preenchido */
+.btn-filled {
+    background-color: #bd834c;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+}
+
+
+/* ==========================================================
+   NOVOS AJUSTES: COR DOS LINKS E ÍCONES DAS REDES SOCIAIS
+   ========================================================== */
+
+/* Seleciona TODOS os links (<a>) que estão dentro da barra de ações */
+.actions-bar a {
+    text-decoration: none; /* Remove o sublinhado azul padrão */
+    color: #2b2b2b;        /* Força a cor a ser idêntica ao texto do seu site */
+}
+
+/* Estilização específica do link do Portfólio */
+.btn-text {
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+/* Garante o alinhamento das redes sociais lado a lado */
+.socials {
+    display: flex;
+    gap: 20px;
+}
+
+/* Alinha o ícone redondo perfeitamente no centro vertical com o texto ao lado */
+.social-link {
+    font-size: 20px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px; /* Pequeno espaçamento entre o ícone e a palavra */
+}
+
+/* Controla o tamanho dos ícones do WhatsApp e Instagram */
+.social-link i {
+    font-size: 16px;
+}
+
+/* Efeito visual: deixa os links levemente opacos quando você passa o mouse por cima */
+.btn-text:hover,
+.social-link:hover {
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+/* ==========================================
+   ESTILOS AJUSTADOS: SOBRE NÓS
+   ========================================== */
+
+   .about-section {
+    display: flex;
+    gap: 50px; /* Distância uniforme entre as duas colunas principais */
+    padding: 80px 60px;
+    background-color: #f0f0f2;
+}
+
+.about-column {
+    flex: 1; /* Faz as duas colunas terem exatamente a mesma largura (50% cada) */
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title-small {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.about-text-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+/* Espaçamento superior para o texto que fica abaixo da imagem na direita */
+.text-bottom {
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+
+/* Caixas de imagens técnicas simétricas */
+.image-box-about {
+    border: 2px solid #2c2c2c;
+    position: relative;
+    background-color: #e6e6e9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 1.6 / 1; /* Define o formato retangular deitado identico ao novo mockup */
+}
+
+/* Mantém as linhas do X proporcionais à nova proporção */
+.image-box-about .line-diagonal-1,
+.image-box-about .line-diagonal-2 {
+    position: absolute;
+    width: 125%;
+    height: 1.5px;
+    background-color: #2c2c2c;
+    top: 50%;
+    left: -12.5%;
+}
+.image-box-about .line-diagonal-1 { transform: rotate(32deg); }
+.image-box-about .line-diagonal-2 { transform: rotate(-32deg); }
+
+.placeholder-text {
+    font-size: 14px;
+    font-weight: bold;
+    color: #2c2c2c;
+    text-align: center;
+    z-index: 2;
+    max-width: 60%;
+}
+
+/* Alinha o botão "Entrar em contato" na base esquerda sem esticar */
+.btn-about {
+    align-self: flex-start;
+    margin-top: 30px;
+}
+
+/* ==========================================
+   ESTILOS: PORTFÓLIO (MANTIDO)
+   ========================================== */
+
+.portfolio-section {
+    padding: 80px 60px;
+    background-color: #f0f0f2;
+    background-image: radial-gradient(circle at left bottom, #f3e9dc 0%, transparent 35%);
+}
+
+.portfolio-header {
+    margin-bottom: 40px;
+}
+
+.portfolio-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.portfolio-subtitle {
+    font-size: 16px;
+    color: #555;
+}
+
+.portfolio-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.portfolio-card {
+    flex: 1;
+    min-width: 120px;
+}
+
+.card-image {
+    border: 2px solid #2c2c2c;
+    aspect-ratio: 3 / 4;
+    position: relative;
+    background-color: #e6e6e9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.card-text {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 2;
+}
+
+.card-x1, .card-x2 {
+    position: absolute;
+    width: 150%;
+    height: 1.5px;
+    background-color: #2c2c2c;
+    top: 50%;
+    left: -25%;
+}
+.card-x1 { transform: rotate(53deg); }
+.card-x2 { transform: rotate(-53deg); }
+
+.portfolio-footer-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}

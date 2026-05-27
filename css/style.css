@@ -102,8 +102,8 @@
     flex: 1.1; /* Ligeiramente mais larga que a coluna de texto */
     border: 2px solid #2c2c2c;
     position: relative;
-    min-height: 850px; /* Garante uma boa altura para o retângulo */
-    min-width: 5px; /* Garante uma boa largura para o retângulo */
+    min-height: 600px; /* Garante uma boa altura para o retângulo */
+    min-width: 0.2px; /* Garante uma boa largura para o retângulo */
     background-color: #e6e6e9;
 }
 
@@ -735,11 +735,6 @@
     justify-content: center;
 }
 
-/* Estrutura das linhas em X internas */
-
-.card-image-box .x-line-1 { transform: rotate(30deg); }
-.card-image-box .x-line-2 { transform: rotate(-30deg); }
-
 /* Setas de navegação circulares */
 .carousel-btn {
     background: rgba(43, 43, 43, 0.08);
@@ -994,16 +989,13 @@
 
 /* Card de foto na proporção vertical 3:4 */
 .gallery-card {
-    border: 2px solid #2c2c2c;
+    border: 0.5px solid #2c2c2c;
     background-color: #e6e6e9;
     aspect-ratio: 3 / 4;
     position: relative;
     overflow: hidden;
 }
 
-
-.gallery-x1 { transform: rotate(53deg); }
-.gallery-x2 { transform: rotate(-53deg); }
 
 /* Paginação (Círculos Inferiores) */
 .pagination-container {
@@ -1151,15 +1143,3 @@
     align-items: center;
     justify-content: center;
 }
-
-/* Linhas estruturais em X da caixa de imagem */
-.contato-x1, .contato-x2 {
-    position: absolute;
-    width: 150%;
-    height: 1px;
-    background-color: #2c2c2c;
-    top: 50%;
-    left: -25%;
-}
-.contato-x1 { transform: rotate(35deg); }
-.contato-x2 { transform: rotate(-35deg); }

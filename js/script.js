@@ -56,7 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // ==========================================================
     const arrayProjetos = [
         /* LISTA_DINAMICA_PYTHON */
-        // { id: Date.now(), nome: "Madeira", categoria: "madeira", imagem: "imagens/portfolio/6992005d4fda7e39847bdb528de4ce75.jpg", descricao: "Madeira tronco" },
         // 12 de Madeira Maciça
         { id: 1, nome: "Mesa de Jantar Rustica", categoria: "madeira" },
         { id: 2, nome: "Aparador de Jacarandá", categoria: "madeira" },

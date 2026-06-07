@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { id: 29, nome: "Home Office Planejado Duplo", categoria: "planejados" },
         { id: 30, nome: "Área de Serviço Otimizada", categoria: "planejados" },
         { id: 31, nome: "Dormitório Infantil Sob Medida", categoria: "planejados" },
-        { id: 32, nome: "Churrasqueira Goumert Planejada", categoria: "planejados" },
+        { id: 32, nome: "Churrasqueira Goumert Planejada", categoria: "planejadas" },
 
         // 3 de Mobiliário
         { id: 33, nome: "Poltrona Estofada Designer", categoria: "mobiliario" },
@@ -137,6 +137,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const indiceInicial = (paginaAtual - 1) * itensPorPagina;
         const indiceFinal = indiceInicial + itensPorPagina;
         const projetosDaPagina = projetosFiltrados.slice(indiceInicial, indiceFinal);
+
+        grid.innerHTML = "";
 
         grid.innerHTML = "";
 
@@ -226,4 +228,105 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+});
+
+// Alternância de Abas + Validação Estática com Redirecionamento
+document.addEventListener("DOMContentLoaded", () => {
+    const authTabsContainer = document.getElementById("authTabs");
+    
+    if (authTabsContainer) {
+        const tabs = authTabsContainer.querySelectorAll(".auth-tab");
+        const loginForm = document.getElementById("login-form");
+        const registerForm = document.getElementById("register-form");
+
+        // Gerenciamento de Abas
+        tabs.forEach(tab => {
+            tab.addEventListener("click", () => {
+                tabs.forEach(t => t.classList.remove("active"));
+                if(loginForm) loginForm.classList.remove("active");
+                if(registerForm) registerForm.classList.remove("active");
+
+                tab.classList.add("active");
+                const targetForm = tab.getAttribute("data-tab");
+
+                if (targetForm === "login" && loginForm) {
+                    loginForm.classList.add("active");
+                } else if (targetForm === "register" && registerForm) {
+                    registerForm.classList.add("active");
+                }
+            });
+        });
+
+        // Validação e Redirecionamento Direto para o index.html
+        if (loginForm) {
+            loginForm.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                const emailInput = document.getElementById("login-email").value.trim().toLowerCase();
+                const passwordInput = document.getElementById("login-password").value;
+                const errorMessage = document.getElementById("login-error-message");
+
+                // Validação exata conforme solicitado
+                if (emailInput === "paiefilho@gmail.com" && passwordInput === "123") {
+                    if(errorMessage) errorMessage.style.display = "none";
+                    
+                    // Vai direto para o arquivo index.html na mesma raiz
+                    window.location.href = "index.html";
+                } else {
+                    if(errorMessage) errorMessage.style.display = "block";
+                }
+            });
+        }
+    }
+});
+
+// Efeito de transição de página estilo folhear de livro
+document.addEventListener("DOMContentLoaded", () => {
+    const bookBtn = document.getElementById("bookNextBtn");
+
+    if (bookBtn) {
+        bookBtn.addEventListener("click", (e) => {
+            e.preventDefault(); // Pausa o clique direto para rodar a animação
+            const targetUrl = bookBtn.getAttribute("href");
+
+            // Aplica um efeito de saída suave no corpo do site
+            document.body.style.transition = "transform 0.4s ease, opacity 0.4s ease";
+            document.body.style.transform = "translateX(-50px)";
+            document.body.style.opacity = "0";
+
+            // Executa a mudança de página após a animação acabar
+            setTimeout(() => {
+                window.location.href = targetUrl;
+            }, 350);
+        });
+    }
+});
+
+// Transição de página estilo folhear de livro (Esquerda e Direita)
+document.addEventListener("DOMContentLoaded", () => {
+    const prevBtn = document.getElementById("bookPrevBtn");
+    const nextBtn = document.getElementById("bookNextBtn");
+
+    // Configura o efeito padrão de transição no body
+    document.body.style.transition = "transform 0.4s ease, opacity 0.4s ease";
+
+    if (prevBtn) {
+        prevBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            const targetUrl = prevBtn.getAttribute("href");
+            document.body.style.transform = "translateX(50px)"; // Desliza para a direita (voltando a folha)
+            document.body.style.opacity = "0";
+            setTimeout(() => { window.location.href = targetUrl; }, 350);
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            const targetUrl = nextBtn.getAttribute("href");
+            document.body.style.transform = "translateX(-50px)"; // Desliza para a esquerda (avançando a folha)
+            document.body.style.opacity = "0";
+            setTimeout(() => { window.location.href = targetUrl; }, 350);
+        });
+    }
 });

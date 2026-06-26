@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso à Conta - Marcenaria Pai e Filho</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-page-body">
+
+    <div class="auth-page-wrapper">
+
+        <div class="bg-shape shape-top-left"></div>
+        <div class="bg-shape shape-bottom-right"></div>
+
+        <div class="auth-container">
+            <div class="auth-form-side">
+                
+                <div class="auth-tabs" id="authTabs">
+                    <button class="auth-tab active" data-tab="login">Entrar</button>
+                    <button class="auth-tab" data-tab="register">Cadastrar</button>
+                </div>
+
+                <form id="login-form" class="auth-form active">
+                    <div id="login-error-message" style="display: none; color: #d32f2f; background: #ffebee; padding: 10px; border: 1px solid #d32f2f; font-size: 14px; margin-bottom: 15px; font-weight: 600;">
+                        E-mail ou senha incorretos!
+                    </div>
+
+                    <div class="auth-input-group">
+                        <label for="login-email">E-mail</label>
+                        <input type="email" id="login-email" placeholder="seu@email.com" required>
+                    </div>
+                    <div class="auth-input-group">
+                        <label for="login-password">Senha</label>
+                        <input type="password" id="login-password" placeholder="••••••••" required>
+                    </div>
+                    <div class="auth-utilities">
+                        <label class="remember-me">
+                            <input type="checkbox"> Lembrar-me
+                        </label>
+                        <a href="#" class="btn-text">Esqueceu a senha?</a>
+                    </div>
+                    <button type="submit" class="btn-filled auth-submit-btn">Acessar Conta</button>
+                </form>
+
+                <form id="register-form" class="auth-form">
+                    <div class="auth-input-group">
+                        <label for="reg-name">Nome Completo</label>
+                        <input type="text" id="reg-name" placeholder="Ex: João Silva" required>
+                    </div>
+                    <div class="auth-input-group">
+                        <label for="reg-email">E-mail</label>
+                        <input type="email" id="reg-email" placeholder="seu@email.com" required>
+                    </div>
+                    <div class="auth-input-group">
+                        <label for="reg-password">Criar Senha</label>
+                        <input type="password" id="reg-password" placeholder="No mínimo 6 caracteres" required>
+                    </div>
+                    <div class="auth-utilities">
+                        <label class="remember-me">
+                            <input type="checkbox" required> Aceito os termos e políticas
+                        </label>
+                    </div>
+                    <button type="submit" class="btn-filled auth-submit-btn">Criar Minha Conta</button>
+                </form>
+            </div>
+
+            <div class="auth-image-side">
+                <div class="auth-image-overlay">
+                    <div class="footer-logo" style="color: #2b2b2b; margin-bottom: 20px;">PAI & FILHO</div>
+                    <div class="contato-text-dummy" style="width: 100%; max-width: 250px; display: flex; flex-direction: column; gap: 8px;">
+                        <div class="grey-line" style="height: 12px; background-color: #b8b8bc; width: 90%;"></div>
+                        <div class="grey-line" style="height: 12px; background-color: #b8b8bc; width: 75%;"></div>
+                        <div class="grey-line" style="height: 12px; background-color: #b8b8bc; width: 60%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
